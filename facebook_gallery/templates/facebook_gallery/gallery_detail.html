@@ -1,0 +1,7 @@
+<h2>{{ object.name }}</h2>
+<p>{{image.description}}</p>
+<ul>
+{%for image in object.image_set.all %}
+	<li><a href="{{image.image}}"><img src="{{image.thumbnail}}"/></a></li>
+{% endfor %}
+</ul>

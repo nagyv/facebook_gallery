@@ -1,0 +1,5 @@
+{% for gallery in object_list %}
+	<a href="{{ gallery.get_absolute_url }}">
+		{% if gallery.get_cover_photo %}<img src="{{gallery.cover_photo}}" />{% endif %}
+		{{gallery}} ({{gallery.count}})</a>
+{% endfor %}
