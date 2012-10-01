@@ -35,3 +35,8 @@ Extras
 ------
 
 The included `cmsplugin_facebook_gallery` adds easy integration to `django-cms` as an app. Simply install it by adding `cmsplugin_facebook_gallery` to `INSTALLED_APPS`. You will find a new "Gallery" option under your Application list in your pages' edit view.
+
+Websites using this app
+------------------------
+
+* [Jalagati Jóga Egyesület](http://jalagat.hu)
