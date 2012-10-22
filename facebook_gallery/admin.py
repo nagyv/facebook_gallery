@@ -10,7 +10,6 @@ import facebook_api
 
 def fetch_albums(request, *args, **kwargs):
     if request.method == 'POST':
-        import ipdb; ipdb.set_trace()   
         if request.POST.get('page_id', False):
             albums = facebook_api.fetch_albums(int(request.POST['page_id']))
             self.message_user(request, "%d albums were fetched" % len(albums))
