@@ -3,6 +3,7 @@ from operator import attrgetter
 from django.shortcuts import redirect, render_to_response
 from django.core.urlresolvers import reverse
 from django.contrib import admin
+from django.contrib import messages
 from django.template import RequestContext
 
 import models
@@ -12,9 +13,12 @@ def fetch_albums(request, *args, **kwargs):
     if request.method == 'POST':
         if request.POST.get('page_id', False):
             albums = facebook_api.fetch_albums(int(request.POST['page_id']))
-            self.message_user(request, "%d albums were fetched" % len(albums))
+            if albums:
+                messages.add_message(request, messages.SUCCESS, "The albums were fetched")
+            else:
+                messages.add_message(request, messages.ERROR, "There was an error fetching the albums. Please, try again later.")
         else:
-            self.message_user(request, "Please provide an object ID")
+            messages.add_message(request, messages.ERROR, "Please provide an object ID")
         return redirect(reverse('admin:index'))
     else:
         return render_to_response('facebook_gallery/fetch_album_form.html', context_instance=RequestContext(request))
