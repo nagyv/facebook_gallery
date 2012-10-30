@@ -19,8 +19,8 @@ setup(
     author_email='<Include Your Email Here>',
     packages=find_packages(),
     include_package_data=True,
-    url='<Include Link to Project>',
-    license='<Include License Name>',
+    url='https://github.com/nagyv/facebook_gallery',
+    license='MIT',
     description=u' '.join(__import__('facebook_gallery').__doc__.splitlines()).strip(),
     classifiers=[
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
@@ -35,4 +35,5 @@ setup(
     long_description=read_file('README.rst'),
     test_suite="runtests.runtests",
     zip_safe=False,
+    requires=['django(>=1.4)','facepy']
 )
