@@ -1,0 +1,9 @@
+include AUTHORS
+include LICENSE
+include README.rst
+recursive-include facebook_gallery/static *
+recursive-include facebook_gallery/locale *
+recursive-include facebook_gallery/templates *
+recursive-include cmsplugin_facebook_gallery/static *
+recursive-include cmsplugin_facebook_gallery/locale *
+recursive-include cmsplugin_facebook_gallery/templates *
